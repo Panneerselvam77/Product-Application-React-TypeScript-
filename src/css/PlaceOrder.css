@@ -1,0 +1,39 @@
+.gateway-instructions {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.gateway-card-box {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-brand {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.card-dummy-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.security-badge {
+  font-size: 0.85rem;
+  color: #16a34a;
+  background: #f0fdf4;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #dcfce7;
+  text-align: center;
+  font-weight: 500;
+}

@@ -1,0 +1,116 @@
+.wishlist-page,
+.wishlist-empty {
+  --wl-border: #e5e7eb;
+  --wl-text: #111827;
+  --wl-muted: #6b7280;
+  --wl-accent: #2563eb;
+  --wl-danger: #dc2626;
+
+  color: var(--wl-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .wishlist-page,
+  .wishlist-empty {
+    --wl-border: #374151;
+    --wl-text: #f9fafb;
+    --wl-muted: #9ca3af;
+  }
+}
+
+.wishlist-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* The product grid class is shared with the home page */
+.wishlist-page .home-product {
+  padding: 0;
+}
+
+.wishlist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--wl-border);
+}
+
+.wishlist-header h1 {
+  margin: 0;
+  font-size: clamp(22px, 4vw, 30px);
+}
+
+.wishlist-count {
+  margin: 4px 0 0;
+  color: var(--wl-muted);
+  font-size: 14px;
+}
+
+.wishlist-clear {
+  padding: 9px 16px;
+  border: 1px solid var(--wl-border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--wl-danger);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.wishlist-clear:hover {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.wishlist-clear:focus-visible,
+.wishlist-empty__link:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+/* Empty state */
+.wishlist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 80px 16px;
+  text-align: center;
+}
+
+.wishlist-empty__icon {
+  font-size: 56px;
+  line-height: 1;
+  color: var(--wl-muted);
+}
+
+.wishlist-empty h2 {
+  margin: 8px 0 0;
+}
+
+.wishlist-empty p {
+  margin: 0 0 12px;
+  color: var(--wl-muted);
+}
+
+.wishlist-empty__link {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--wl-accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wishlist-empty__link:hover {
+  background: #1d4ed8;
+}

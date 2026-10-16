@@ -1,0 +1,123 @@
+.wish-btn {
+  --wb-bg: rgba(255, 255, 255, 0.92);
+  --wb-color: #6b7280;
+  --wb-active: #e11d48;
+  --wb-border: #e5e7eb;
+  --wb-hover: #f3f4f6;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--wb-bg);
+  color: var(--wb-color);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .wish-btn {
+    --wb-bg: rgba(31, 41, 55, 0.92);
+    --wb-color: #d1d5db;
+    --wb-border: #374151;
+    --wb-hover: #374151;
+  }
+}
+
+.wish-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wish-btn:hover {
+  color: var(--wb-active);
+  transform: scale(1.1);
+}
+
+.wish-btn.is-active {
+  color: var(--wb-active);
+}
+
+.wish-btn.is-active svg {
+  fill: currentColor;
+  animation: wb-pop 0.3s ease;
+}
+
+@keyframes wb-pop {
+  0% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.wish-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+/* Pinned to the top-right corner of a card */
+.wish-btn--floating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+/* Pill with a label, used next to "Add to cart" on the details page */
+.wish-btn--labelled {
+  width: auto;
+  height: auto;
+  padding: 12px 18px;
+  border: 1px solid var(--wb-border);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.wish-btn--labelled svg {
+  color: var(--wb-color);
+}
+
+.wish-btn--labelled:hover {
+  background: var(--wb-hover);
+  color: inherit;
+  transform: none;
+}
+
+.wish-btn--labelled.is-active svg,
+.wish-btn--labelled:hover svg {
+  color: var(--wb-active);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wish-btn,
+  .wish-btn.is-active svg {
+    transition: none;
+    animation: none;
+  }
+  .wish-btn:hover {
+    transform: none;
+  }
+}
