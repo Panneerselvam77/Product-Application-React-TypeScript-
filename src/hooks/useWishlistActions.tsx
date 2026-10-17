@@ -6,8 +6,8 @@ import {
   restoreWishlistItems,
 } from "../redux/features/wishlistSlice";
 import type { Product } from "../types";
-import { notify, UndoMessage, UNDO_CLOSE } from "../utils/toastHelpers";
-
+import { UndoMessage } from "../utils/toastHelpers";
+import { notify, UNDO_CLOSE } from "../utils/utilsFuncs";
 // Only keep what the wishlist page needs. List/detail API objects carry
 // images, reviews, etc. that would just bloat localStorage.
 const KEEP = [

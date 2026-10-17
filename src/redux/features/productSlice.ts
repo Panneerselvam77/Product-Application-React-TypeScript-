@@ -69,9 +69,10 @@ export const fetchProduct = createAsyncThunk(
         sortBy,
         order,
       };
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const err = error as { message?: string };
       return rejectWithValue({
-        message: error.message || "error",
+        message: err.message || "error",
       });
     }
   },

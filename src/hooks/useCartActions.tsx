@@ -10,8 +10,8 @@ import {
 } from "../redux/features/cartSlice";
 import type { CartItem } from "../redux/features/cartSlice";
 import type { Product } from "../types";
-import { notify, UndoMessage, UNDO_CLOSE } from "../utils/toastHelpers";
-
+import { UndoMessage } from "../utils/toastHelpers";
+import { notify, UNDO_CLOSE } from "../utils/utilsFuncs";
 /**
  * Cart actions that also show the right toast. Use these instead of
  * dispatching cart actions directly so messages stay consistent.

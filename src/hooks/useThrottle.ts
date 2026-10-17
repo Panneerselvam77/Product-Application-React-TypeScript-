@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function useThrottle<T>(value: T, delay: number) {
   const [throttledValue, setThrottledValue] = useState<T>(value);
-  const lastUpdated = useRef<number>(Date.now());
+  const lastUpdated = useRef<number>(0);
 
   useEffect(() => {
     const now = Date.now();
@@ -14,7 +14,7 @@ export default function useThrottle<T>(value: T, delay: number) {
     } else {
       const timer = setTimeout(() => {
         setThrottledValue(value);
-        lastUpdated.current = Date.now();
+        lastUpdated.current = now;
       }, delay - timeElapsed);
 
       return () => clearTimeout(timer);
